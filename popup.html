@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
     <title>Rename Tab</title>
 </head>
 <body>
     <input type="text" name="title" id="title" placeholder="Enter new title" />
-    <button name="saveBtn" id="saveBtn">Save</button>
-    <button name="lockBtn" id="lockBtn">Lock (Beta)</button>
+    <div class="button-container">
+        <button name="saveBtn" id="saveBtn" title="Restores on page reload">Save</button>
+        <button name="lockBtn" id="lockBtn" title="Persists on page reload">Lock Title</button>
+    </div>
 
     <script src="popup.js"></script>
 </body>

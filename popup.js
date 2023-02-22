@@ -59,17 +59,13 @@ lockBtn.addEventListener('click', () => {
 
     chrome.storage.sync.get(["lockedTabs"])
         .then((result) => {
-            console.log('yaha hai result', result);
             chrome.tabs.query({active: true, currentWindow: true}, (tabs) => {
                 if(result.lockedTabs) {
-                    console.log('tabs is', tabs);
                     let tabId = tabs[0].id;
 
                     let lockedTabs = result.lockedTabs;
-                    console.log('locked tab hai', lockedTabs);
                     lockedTabs[`${tabId}`] = titleInputField.value;
 
-                    console.log('value during save is', lockedTabs);
                     chrome.storage.sync.set({lockedTabs: lockedTabs})
                 }else {
                     let tabId = tabs[0].id;
