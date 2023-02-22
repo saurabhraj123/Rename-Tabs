@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Rename Tab",
+    "version": "1.0",
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "permissions": ["activeTab", "tabs", "scripting", "storage"],
+    "commands": {
+        "_execute_action": {
+          "suggested_key": {
+            "default": "Ctrl+Shift+H",
+            "mac": "Command+Shift+H"
+          }
+        }
+      },
+      "content_scripts": [
+        {
+          "matches": ["<all_urls>"],
+          "js": ["content-script.js"]
+        }
+      ]
+}
